@@ -1,0 +1,16 @@
+[
+    {
+        "id": "1",
+        "title": "House of dragon",
+        "director": "wharever",
+        "year": "2022"
+        
+    }, 
+    {
+        "id": "2",
+        "title": "Rings of power",
+        "director": "wharever",
+        "year": "2022"
+        
+    }
+]
