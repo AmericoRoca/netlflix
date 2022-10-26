@@ -13,6 +13,8 @@ import { PeliculasComponent } from './peliculas/peliculas.component';
 import { SeriesComponent } from './series/series.component';
 import { MyListComponent } from './my-list/my-list.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MidleComponent } from './midle/midle.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +26,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     RegisterComponent,
     PeliculasComponent,
     SeriesComponent,
-    MyListComponent
+    MyListComponent,
+    MidleComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,    
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
