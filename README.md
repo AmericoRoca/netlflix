@@ -1,2 +1,2 @@
 # netlflix
-Netflix clone med it with Angular by Americo Roca
+Netflix clone made it with Angular by Americo Roca
