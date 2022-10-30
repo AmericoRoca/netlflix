@@ -1,0 +1,33 @@
+nav{
+    background-color: black;
+    opacity: 0.8;
+}
+a{
+    color: white;
+}
+a:hover{
+    color: gray;
+}
+img{
+    width: 90px;
+}
+.logo{
+    margin-left: 50px;
+}
+.navbar-nav{
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.icon{
+    color: white;
+    font-size: 25px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+.account{
+    float: right;
+}
+.profile{
+    margin-left: 15px;
+    width: 10%;
+}

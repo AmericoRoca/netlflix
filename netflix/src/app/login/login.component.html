@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="login">
     <img src="assets/logo/netflix.png" alt="netflix-logo">
     <div class="container">
         <div class="box">
@@ -14,9 +14,9 @@
                     <input type="checkbox" class="form-check-input input1" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div>
-                <button type="submit" class="btn btn-primary" >Sign in</button>
+                <button type="submit" class="btn btn-primary">Sign in</button>
             </form>
-            <p>New to Netflix? <a> Sign up now.</a></p>
+            <p>New to Netflix? <a routerLink="midle"> Sign up now.</a></p>
         </div>
     </div>
 </div>
