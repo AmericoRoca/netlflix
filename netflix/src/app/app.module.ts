@@ -14,6 +14,7 @@ import { MyListComponent } from './my-list/my-list.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MidleComponent } from './midle/midle.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     BrowserModule,
     NgbModule,
     FontAwesomeModule,    
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],
