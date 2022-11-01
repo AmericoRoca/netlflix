@@ -25,7 +25,17 @@ export class AppComponent implements OnInit{
   }
 
   public onSubmit(){
-    console.log(this.user);
+    /*this._userService.singUp(this.user).subscribe(
+      response => {
+        console.log(response);
+      }, 
+      error =>{
+        var errorMessage = <any>error;
+        if(errorMessage != null){
+          console.log(error);
+        }
+      }
+    );*/
 
   }
 
