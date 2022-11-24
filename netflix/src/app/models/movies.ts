@@ -1,4 +1,4 @@
-export class User{
+export class Movies{
 
     constructor(
         public _id:string,
