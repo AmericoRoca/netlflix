@@ -7,6 +7,7 @@ var app = express();
 
 //Routes
 var user_routes = require('./routes/user');
+var movies_routes = require('./routes/movies');
 
 
 
@@ -21,6 +22,7 @@ app.use(bodyParser.json());
 
 //Routes source
 app.use('/api', user_routes);
+app.use('/api', movies_routes);
 
 
 module.exports = app;

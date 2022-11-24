@@ -4,6 +4,8 @@ var bcrypt = require('bcrypt-nodejs');
 const { readdirSync } = require('fs');
 var User = require('../models/user');
 var jwt = require('../services/jwt');
+var fs = require('fs');
+var path = require('path');
 
 function test(req,res){
     res.status(200).send({
@@ -85,8 +87,80 @@ function loginUser(req,res){
     });
 }
 
+function updateUser(req,res){
+    var userId = req.params.id;
+    var update = req.body;
+
+    User.findByIdAndUpdate(userId, update, (err, userUpdate) =>{
+        if(err){
+            res.status(500).send({message:"Error when upload the user"});
+        } else {
+            if(!userUpdate){
+                res.status(404).send({message:"Can´t update user"});
+            } else {
+                res.status(200).send({user: userUpdate});
+            }
+        }
+    });
+}
+
+function uploadImage(req,res){
+    var userId = req.params.id;
+    var file_name = "Don´t upload";
+
+    if (req.files){
+
+        var file_path = req.files.image.path;
+        var file_split = file_path.split('\\');
+        var file_name = file_split[3];
+        var ext_split = file_name.split('\.');
+        var file_ext = ext_split[1];
+        
+        
+
+        if (file_ext == 'png' || file_ext == 'jpg' || file_ext == 'gif' || file_ext == 'jpeg'){
+
+            
+
+            User.findByIdAndUpdate(userId, {image: file_name}, (err, userUpdate) =>{
+                if(!userUpdate){
+                    res.status(404).send({message: "Can´t update the user"});
+                } else {
+                    res.status(200).send({user: userUpdate});
+                }
+            });
+
+        } else {
+            res.status(404).send({message: "Image extension not valid"}); 
+
+        }
+    } else {
+        res.status(404).send({message: "Image doesn´t upload"});
+    }
+
+}
+
+function getImageFile(req,res){
+
+    var imageFile = req.params.imageFile;
+    var path_file = 'backend/uploads/users/'+imageFile;
+
+    if(fs.existsSync(path_file)){
+       
+        res.sendFile(path.resolve(path_file));
+        
+    } else {
+        res.status(404).send({message: "Image not found "+path_file});
+    }
+
+}
+
+
 module.exports = {
     test,
     saveUser,
-    loginUser
+    loginUser,
+    updateUser,
+    uploadImage,
+    getImageFile
 };
