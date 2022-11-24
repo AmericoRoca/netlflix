@@ -129,6 +129,10 @@ function uploadImage (req,res){
                     res.status(404).send({message: "Can´t update the movie"});
                 } else {
                     res.status(200).send({movie: movieUpdated});
+                    console.log(file_path);
+                    console.log(file_split);
+                    console.log(file_name);
+                    console.log(file_ext);
                 }
             });
 
