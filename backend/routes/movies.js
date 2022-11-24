@@ -16,6 +16,8 @@ api.put('/edit-movie/:id', md_auth.ensureAuth, MoviesController.updateMovie);
 api.delete('/delete-movie/:id', md_auth.ensureAuth, MoviesController.deleteMovie);
 api.post('/upload-image-movie/:id', [md_auth.ensureAuth, md_upload], MoviesController.uploadImage);
 api.get('/get-image-movie/:imageFile', MoviesController.getImageFile);
+api.post('/upload-video-movie/:id', [md_auth.ensureAuth, md_upload], MoviesController.uploadTrailer);
+api.get('/get-video-movie/:videoFile', MoviesController.getTrailer);
 
 
 

@@ -129,10 +129,7 @@ function uploadImage (req,res){
                     res.status(404).send({message: "Can´t update the movie"});
                 } else {
                     res.status(200).send({movie: movieUpdated});
-                    console.log(file_path);
-                    console.log(file_split);
-                    console.log(file_name);
-                    console.log(file_ext);
+                
                 }
             });
 
@@ -161,6 +158,63 @@ function getImageFile(req,res){
 
 }
 
+
+function uploadTrailer(req,res){
+    var movieId = req.params.id;
+
+    var file_name = 'not uploaded';
+
+    if (req.files){
+
+        var file_path = req.files.image.path;
+        var file_split = file_path.split('\\');
+        var file_name = file_split[3];
+        var ext_split = file_name.split('\.');
+        var file_ext = ext_split[1];
+        
+        
+
+        if (file_ext == 'mp4' || file_ext == 'mkv'){
+
+            
+
+            Movies.findByIdAndUpdate(movieId, {trailer: file_name}, (err, movieUpdated) =>{
+                if(!movieUpdated){
+                    res.status(404).send({message: "Can´t update the movie"});
+                } else {
+                    res.status(200).send({movie: movieUpdated});
+                
+                }
+            });
+
+        } else {
+            res.status(404).send({message: "Video extension not valid"}); 
+
+        }
+    } else {
+        res.status(404).send({message: "Video doesn´t upload"});
+    }
+    
+}
+
+function getTrailer(req,res){
+
+    var videoFile = req.params.videoFile;
+    var path_file = 'backend/uploads/movies/trailers'+videoFile;
+
+    if(fs.existsSync(path_file)){
+       
+        res.sendFile(path.resolve(path_file));
+        
+    } else {
+        res.status(404).send({message: "Video not found "+videoFile});
+        console.log(videoFile);
+    }
+
+}
+
+
+
 module.exports = {
     getMovie,
     getMovies,
@@ -168,5 +222,7 @@ module.exports = {
     updateMovie,
     deleteMovie,
     uploadImage,
-    getImageFile
+    getImageFile,
+    uploadTrailer,
+    getTrailer
 }
