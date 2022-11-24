@@ -1,1 +1,15 @@
-
+<div>
+    <video src="assets/video/HBO.mp4" controls autoplay muted preload loop></video>
+    <div class="container">
+        <h1>{{title}}</h1>
+        <p>{{description}}</p>
+        <button class="btn btn-primary button1"><fa-icon [icon]="faPlay"></fa-icon> Wacth</button>
+        <button class="btn btn-primary button2"><fa-icon [icon]="faCirclePlus" class="icon"></fa-icon> Add to my list</button>
+    </div>
+</div>
+<div class="series">
+    <app-series></app-series>
+</div>
+<div class="movies">
+    <app-peliculas></app-peliculas>
+</div>

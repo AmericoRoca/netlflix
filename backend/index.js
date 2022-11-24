@@ -1,22 +1,17 @@
-const express = require('express');
-const app = express();
-const morgan = require('morgan');
+'use strict'
 
+var mongoose = require('mongoose');
+var app = require('./app');
+var port = process.env.PORT || 3977;
 
-//settings
-app.set('port',  process.env.PORT || 3000);
-app.set('json spaces', 2);
+mongoose.connect('mongodb://localhost:27017/netflix', (err,res)=>{
+    if(err){
+        throw err;
+    } else {
+        console.log("The database conection is working");
 
-//middlewares
-app.use(morgan('dev'));
-app.use(express.urlencoded({extended: false}));
-app.use(express.json());
-
-//router
-app.use(require('./routes/index'));
-app.use(require('./routes/movies'));
-
-//starting the server
-app.listen(3000, ()=> {
-    console.log(`Server on port ${app.get('port')}`);
+        app.listen(port, function(){
+            console.log("Server listenning in http:localhost:"+port);
+        });
+    }
 });

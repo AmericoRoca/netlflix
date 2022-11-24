@@ -2,7 +2,7 @@
     <img src="assets/logo/netflix.png" alt="netflix-logo">
     <div class="container">
         <div class="box">
-            <form>
+            <form #loginForm="ngForm">
                 <h1>Sign in</h1>
                 <div class="mb-3">
                     <input type="email" class="form-control input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
@@ -14,9 +14,9 @@
                     <input type="checkbox" class="form-check-input input1" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div>
-                <button type="submit" class="btn btn-primary" >Sign in</button>
+                <button type="submit" class="btn btn-primary">Sign in</button>
             </form>
-            <p>New to Netflix? <a> Sign up now.</a></p>
+            <p>New to Netflix? <a routerLink="register"> Register now.</a></p>
         </div>
     </div>
 </div>

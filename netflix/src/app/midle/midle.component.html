@@ -1,7 +1,23 @@
-<h1>How are you? Choose your profile</h1>
-<div>
-    <div>
-        
+<div class="container-fluid" *ngIf="login">
+    <div class="container">
+        <h1>How are you? Choose your profile</h1>
+    
+        <div class="caja">
+            <img src="assets/profile/prof.png" alt="profile1">
+            <p>Profile 1</p>
+        </div>
+        <div class="caja">
+            <img src="assets/profile/prof2.jpg" alt="profile2">
+            <p>Profile 2</p>
+        </div>
+        <div class="caja">
+            <img src="assets/profile/prof3.jpg" alt="profile3">
+            <p>Profile 3</p>
+        </div>
+        <div class="caja">
+            <fa-icon [icon]="faCirclePlus" class="icon"></fa-icon>
+            <p>Add profile</p>
+        </div>
     </div>
-    <button></button>
+    <button class="btn btn-primary">Manage profiles</button>
 </div>

@@ -14,31 +14,31 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: '/midle',
+    path: 'midle',
     component: MidleComponent,
   },
   {
-    path: '/home',
+    path: 'home',
     component: HomeComponent,
   },
   {
-    path: '/series',
+    path: 'series',
     component: SeriesComponent,
   },
   {
-    path: '/movies',
+    path: 'movies',
     component: PeliculasComponent,
   },
   {
-    path: '/login',
+    path: 'login',
     component: LoginComponent,
   },
   {
-    path: '/register',
+    path: 'register',
     component: RegisterComponent,
   },
   {
-    path: '/my-list',
+    path: 'my-list',
     component: MyListComponent,
   },
   {
